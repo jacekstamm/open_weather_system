@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'groovy'
+
+}
+
+group 'com.task'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.groovy:groovy-all:${groovyVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation "org.apache.groovy:groovy-all:${groovyVersion}"
+    testImplementation "org.spockframework:spock-core:${spockVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
