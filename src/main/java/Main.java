@@ -33,7 +33,7 @@ public class Main {
 
     private void nextForecastInit(Scanner scan) {
         System.out.println("Do you want to check next forecast?");
-        System.out.println("If YES write Y, if no type whatever you want to exit.");
+        System.out.println("If <YES> write Y, if <NO> type whatever you want to exit.");
         String onceAgain = scan.next();
         if (onceAgain.equals("Y")) {
             forecast();

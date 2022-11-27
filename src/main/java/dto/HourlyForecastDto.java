@@ -4,9 +4,7 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Getter
@@ -14,6 +12,7 @@ public class HourlyForecastDto {
 
     private List<HourForecastDto> hours;
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(System.lineSeparator());

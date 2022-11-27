@@ -1,7 +1,13 @@
 plugins {
     id 'java'
     id 'groovy'
+    id 'application'
+}
 
+mainClassName = 'Main'
+
+run {
+    standardInput = System.in
 }
 
 group 'com.task'

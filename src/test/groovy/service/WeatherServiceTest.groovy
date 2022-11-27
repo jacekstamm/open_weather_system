@@ -15,9 +15,9 @@ import static constants.WebClientConstants.getHourlyForecastModel
 
 class WeatherServiceTest extends Specification {
 
-    private static final String PATH_BEGIN = 'src/test/resources/'
+    private static final String PATH_BEGIN = 'src/test/testConfigFiles/'
     private static final String API_KEY = 'apiKey'
-    private static final String FILE_NAME = 'src/test/resources/correctConfigFile.txt'
+    private static final String FILE_NAME = 'src/test/testConfigFiles/correctConfigFile.txt'
     private static final String CITY_NAME = 'Warsaw'
     private static final double LATITUDE = 89.2297
     private static final double LONGITUDE = 21.0122
@@ -65,11 +65,11 @@ class WeatherServiceTest extends Specification {
         List<HourForecastDto> hourForecastList = result.hours
         verifyAll {
             hourForecastList.size() == 48
-            checkHourResult(hourForecastList.get(0), '26.11.2022 14:00', 28.51, 0.0)
-            checkHourResult(hourForecastList.get(1), '26.11.2022 15:00', 28.33, 0.37)
-            checkHourResult(hourForecastList.get(2), '26.11.2022 16:00', 25.81, 0.27)
-            checkHourResult(hourForecastList.get(3), '26.11.2022 17:00', 26.94, 0.65)
-            checkHourResult(hourForecastList.get(4), '26.11.2022 18:00', 28.22, 1.17)
+            checkHourResult(hourForecastList.get(0), '26.11.2022 14:00', 28.51, 'unknown')
+            checkHourResult(hourForecastList.get(1), '26.11.2022 15:00', 28.33, '0.37')
+            checkHourResult(hourForecastList.get(2), '26.11.2022 16:00', 25.81, '0.27')
+            checkHourResult(hourForecastList.get(3), '26.11.2022 17:00', 26.94, '0.65')
+            checkHourResult(hourForecastList.get(4), '26.11.2022 18:00', 28.22, '1.17')
         }
     }
 
@@ -115,7 +115,7 @@ class WeatherServiceTest extends Specification {
         assert day.getProbabilityOfPrecipitation() == possibleOfRain
     }
 
-    private static void checkHourResult(HourForecastDto hour, String data, double temperature, double rainModel) {
+    private static void checkHourResult(HourForecastDto hour, String data, double temperature, String rainModel) {
         assert hour.date == data
         assert hour.temperature == temperature
         assert hour.precipitationVolume == rainModel

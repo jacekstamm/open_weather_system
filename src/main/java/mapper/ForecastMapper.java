@@ -60,11 +60,11 @@ public class ForecastMapper {
         return hoursList;
     }
 
-    protected double getVolume(HourModel model) {
+    protected String getVolume(HourModel model) {
         if (model.getRain() == null) {
-            return 0;
+            return "unknown";
         } else {
-            return model.getRain().get_1h();
+            return String.valueOf(model.getRain().get_1h());
         }
     }
 

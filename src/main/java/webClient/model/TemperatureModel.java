@@ -1,13 +1,10 @@
 package webClient.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-
-@NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
 public class TemperatureModel {
 
     private double day;

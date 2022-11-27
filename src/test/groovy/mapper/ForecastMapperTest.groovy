@@ -13,15 +13,15 @@ class ForecastMapperTest extends Specification {
     @Unroll
     def 'should get rain equals #rain from HourModel'() {
         when:
-        double result = mapper.getVolume(new HourModel(1669471200, 2.90, rain as RainModel))
+        String result = mapper.getVolume(new HourModel(1669471200, 2.90, rain as RainModel))
 
         then:
         result == expected
 
         where:
         rain                | expected
-        null                | 0
-        new RainModel(1.45) | 1.45
+        null                | 'unknown'
+        new RainModel(1.45) | '1.45'
     }
 
     def 'should return proper formatted date from timestamp'() {
