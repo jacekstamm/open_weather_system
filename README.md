@@ -5,10 +5,6 @@
 1) Java 11
 2) Gradle
 
-## How to build application
-
-In terminal/console enter `gradle build`
-
 ## How to run application
 
 You need to go to directory where you have application folder. In this place please open terminal/console and
